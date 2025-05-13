@@ -1,24 +1,25 @@
 {
-  "name": "yourvendor/afromessage-sms",
-  "description": "A Laravel package to send SMS via Afromessage API",
+  "name": "your-vendor/afromessage",
+  "description": "Laravel Afromessage SMS integration",
   "type": "library",
   "license": "MIT",
   "autoload": {
     "psr-4": {
-      "YourVendor\\AfroMessageSms\\": "src/"
+      "YourVendor\\Afromessage\\": "src/"
     }
   },
   "require": {
-    "php": ">=7.4",
+    "php": "^8.0",
     "illuminate/support": "^8.0|^9.0|^10.0"
   },
   "extra": {
     "laravel": {
       "providers": [
-        "YourVendor\\AfroMessageSms\\AfroMessageServiceProvider"
-      ]
+        "YourVendor\\Afromessage\\SmsServiceProvider"
+      ],
+      "aliases": {
+        "Sms": "YourVendor\\Afromessage\\Facades\\Sms"
+      }
     }
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  }
 }
